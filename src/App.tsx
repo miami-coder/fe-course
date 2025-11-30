@@ -1,10 +1,15 @@
 import './App.css'
+import UsersComponent from "./components/users-component/UsersComponent.tsx";
 
-function App() {
+const App = () => {
+    console.log('app');
+
+
+
 
   return (
       <>
-
+        <UsersComponent/>
       </>
   )
 }
