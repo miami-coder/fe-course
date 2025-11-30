@@ -1,14 +1,13 @@
 import './App.css'
+import {CoursesComponent} from "./components/courses-component/CoursesComponent.tsx";
 
-function App() {
+const App = () => {
 
-  return (
-      <>
-          <h1 className="text-3xl font-bold underline">
-              Hello world!
-          </h1>
-      </>
-  )
+    return (
+        <>
+            <CoursesComponent/>
+        </>
+    )
 }
 
 export default App
