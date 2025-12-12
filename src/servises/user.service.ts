@@ -24,3 +24,16 @@ export const saveUser = async (user: IUser): Promise<IUser> => {
     const {data} = await axiosInstance.post<IUser>('/users', user);
     return data;
 }
+
+// POST with fetch
+// fetch('YOUURL', {
+//     method: 'POST',
+//     headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//         key1: 'value1',
+//         key2: 'value2',
+//     })
+// })
