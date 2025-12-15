@@ -18,7 +18,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use((requestObject) => {
     if (requestObject.method?.toUpperCase() === 'GET') {
-        requestObject.headers.Authorization = 'Bearer' + retriveLocalStorage<IUserWithTokens>('user').accessToken
+        requestObject.headers.Authorization = 'Bearer ' + retriveLocalStorage<IUserWithTokens>('user').accessToken
     }
     return requestObject;
 })
@@ -32,7 +32,6 @@ export const login = async ({username, password, expiresInMins}: LoginData): Pro
 
 export const loadAuthProducts = async (): Promise<IProduct[]> => {
     const {data: {products}} = await axiosInstance.get<IProductsResponseModel>('/products');
-    console.log(products);
     return products;
 }
 
