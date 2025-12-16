@@ -9,7 +9,7 @@ function App() {
     const [counter, setCounter] = useState<number>(0);
 
     return (
-        <>
+        <div>
             <MyContext.Provider value={{
                 counterValue: counter,
                 increment: (obj) => {
@@ -19,7 +19,7 @@ function App() {
                 <LeftBranch/>
                 <RightBranch/>
             </MyContext.Provider>
-        </>
+        </div>
     )
 }
 
