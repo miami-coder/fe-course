@@ -1,7 +1,27 @@
+import {useAppSelector} from "../redux/hooks/useAppSelector.tsx";
+import {useAppDispatch} from "../redux/hooks/useAppDispatch.tsx";
+import {useEffect} from "react";
+import {postSliceActions} from "../redux/slices/postSlice/postSlice.ts";
+
 const PostsPage = () => {
+    // const {id} = useParams();
+    const {posts, loadState} = useAppSelector(({postSlice}) => postSlice);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(postSliceActions.loadPosts())
+    }, []);
     return (
         <div>
-            PostsPage content
+            {!loadState && <div>Loading</div>}
+            {
+                posts.map((post) => {
+                    return <div key={post.id}>
+                        ID: {post.id}
+                        {post.title}
+                    </div>
+                })
+            }
         </div>
     );
 };
